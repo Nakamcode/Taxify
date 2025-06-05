@@ -50,45 +50,45 @@ function ReverseCalculator({ bands }) {
   };
 
   return (
-    <div className=" bg-yellow-100 p-6 rounded shadow-md">
+    <div className=" bg-orange-100 p-6 rounded shadow-md">
       <h2 className="text-xl font-semibold mb-4">Reverse Calculator</h2>
       <label className="block mb-2">Enter Net Income</label>
       <input
         type="number"
-        className="p-2 border rounded w-64 mb-4"
+        className="border w-64 mb-4 bg-white p-4 py-3 "
         value={netInput}
         onChange={(e) => setNetInput(e.target.value)}
         placeholder="e.g. 3227.75"
       />
       <button
         onClick={handleReverseCalculate}
-        className="bg-yellow-600 text-white px-6 py-2 rounded ml-3"
+        className="bg-orange-600 text-white px-5 py-3 ml-3 hover:bg-orange-700 transition-colors duration-300"
       >
         Reverse Calculate
       </button>
 
       {/* {result && ( */}
-        <div className="mt-4">
-          {/* {result.error ? (
+      <div className="mt-4 flex flex-col gap-2">
+        {/* {result.error ? (
             <p className="text-red-600">{result.error}</p>
           ) : ( */}
-          <>
-            <p>
-              <strong>Monthly Basic Income:</strong> GH₵ {result.gross}
-            </p>
-            <p>
-              <strong>Income Tax:</strong> GH₵ {result.paye}
-            </p>
-            <p>
-              <strong>SSNIT (5.5%):</strong> GH₵ {result.ssnit}
-            </p>
-            <p>{/* <strong>Tier 2 (5%):</strong> GH₵ {result.tier2} */}</p>
-            <p>
-              <strong>Net Income:</strong> GH₵ {result.net}
-            </p>
-          </>
-          {/* )} */}
-        </div>
+        <>
+          <p>
+            <strong>Monthly Basic Income:</strong> GH₵ {result.gross}
+          </p>
+          <p>
+            <strong>Income Tax:</strong> GH₵ {result.paye}
+          </p>
+          <p>
+            <strong>SSNIT (5.5%):</strong> GH₵ {result.ssnit}
+          </p>
+          <p>{/* <strong>Tier 2 (5%):</strong> GH₵ {result.tier2} */}</p>
+          <p>
+            <strong>Net Income:</strong> GH₵ {result.net}
+          </p>
+        </>
+        {/* )} */}
+      </div>
       {/* )} */}
     </div>
   );

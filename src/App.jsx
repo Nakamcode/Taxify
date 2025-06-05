@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ReverseCalculator from "./ReverseCalculator";
+import { format } from "number-currency-format";
 
 function App() {
   const [basicIncome, setBasicIncome] = useState(0);
@@ -51,15 +52,16 @@ function App() {
 
     const net = gross - ssnitValue - tax;
 
-    setSSNIT(ssnitValue.toFixed(2));
-    setIncomeTax(tax.toFixed(2));
-    setNetIncome(net.toFixed(2));
+    setSSNIT(format(ssnitValue.toFixed(2)));
+    setIncomeTax(format(tax.toFixed(2)));
+    setNetIncome(format(net.toFixed(2)));
   };
 
   return (
     <div className="h-screen flex flex-col items-center justify-center gap-4">
+      <h1 className="text-3xl font-bold mb-10">SBEMS - Taxify</h1>
       <div className="flex gap-20">
-        <div className="flex bg-gray-200 ">
+        <div className="flex bg-gray-100 rounded shadow-md">
           <div className="p-10">
             <div className="flex flex-col gap-10">
               <label htmlFor="B-income" className="flex flex-col">
@@ -90,14 +92,14 @@ function App() {
 
               <button
                 onClick={handleCalculate}
-                className="bg-blue-700 text-white px-5 py-3 mt-6"
+                className="bg-blue-700 text-white px-5 py-3 mt-6 hover:bg-blue-800 transition-colors duration-300"
               >
                 Calculate
               </button>
             </div>
           </div>
 
-          <div className="border-l p-10">
+          <div className="border-l border-gray-300 p-10">
             <div className="flex flex-col gap-10">
               <label htmlFor="IncomeTax" className="flex flex-col">
                 Income Tax
@@ -134,7 +136,7 @@ function App() {
                   value={netIncome}
                   disabled
                   placeholder="NET INCOME"
-                  className="bg-blue-300 p-4 py-3 border"
+                  className="bg-blue-100 p-4 py-3 border"
                 />
               </label>
             </div>
