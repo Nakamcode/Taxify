@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { format } from "number-currency-format";
+
 function ReverseCalculator({ bands }) {
   const [netInput, setNetInput] = useState("");
   const [result, setResult] = useState(0);
@@ -33,11 +35,11 @@ function ReverseCalculator({ bands }) {
 
       if (Math.abs(net - targetNet) <= 0.01) {
         setResult({
-          gross: gross.toFixed(2),
-          ssnit: ssnit.toFixed(2),
+          gross: format(gross.toFixed(2)),
+          ssnit: format(ssnit.toFixed(2)),
           //   tier2: tier2.toFixed(2),
-          paye: paye.toFixed(2),
-          net: net.toFixed(2),
+          paye: format(paye.toFixed(2)),
+          net: format(net.toFixed(2)),
         });
         found = true;
         break;

@@ -145,6 +145,10 @@ function App() {
 
         <ReverseCalculator bands={bands} />
       </div>
+
+      <footer className="mt-10">
+        <h5 className="text-gray-500">Developed By Nana Asamaoh Kwaw</h5>
+      </footer>
     </div>
   );
 }
