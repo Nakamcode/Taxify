@@ -144,6 +144,16 @@ function App() {
         </div>
 
         <ReverseCalculator bands={bands} />
+
+        {/* 
+        Charts 
+        - Piechart
+        - Percentage of people that take that salary
+        - Class (Middle, Upper, Lower)
+        - Link to GRA
+        - Disclaimer
+        - Purchasing Power (of your salary)
+         */}
       </div>
 
       <footer className="mt-10">
